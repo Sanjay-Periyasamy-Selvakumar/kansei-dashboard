@@ -32,9 +32,5 @@ This dashboard integrates emotional design analysis, demand forecasting, and soc
 3. Refer to `user_guide_dashboard.html` for detailed instructions
 
 
-## 📄 Files Included
-- `interactive_thesis_dashboard.html` – Main dashboard
-- `user_guide_dashboard.html` – User guide and instructions
-
 ## 🙌 Credits
 Developed by **Selvakumar Sanjay** as part of a master's thesis project.
