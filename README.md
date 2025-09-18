@@ -31,11 +31,6 @@ This dashboard integrates emotional design analysis, demand forecasting, and soc
 2. Use dropdowns to interact with each module
 3. Refer to `user_guide_dashboard.html` for detailed instructions
 
-## 🌐 GitHub Pages Hosting
-To view the dashboard online:
-- Enable GitHub Pages in the repository settings
-- Set source to `main` branch and `/root` folder
-- Access the site at: `https://<your-username>.github.io/<repository-name>/`
 
 ## 📄 Files Included
 - `interactive_thesis_dashboard.html` – Main dashboard
