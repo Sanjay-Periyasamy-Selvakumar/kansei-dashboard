@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kansei Emotion Cluster Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        canvas { max-width: 600px; margin: auto; }
+    </style>
+</head>
+<body>
+    <h2>Kansei Emotion Cluster Viewer</h2>
+    <label for='kanseiSelect'>Select Kansei Word:</label>
+    <select id='kanseiSelect' onchange='updateChart()'>
+        <option value='Comfort'>Comfort</option>
+        <option value='Eco-Friendly'>Eco-Friendly</option>
+        <option value='Modern'>Modern</option>
+        <option value='Reliable'>Reliable</option>
+        <option value='Stylish'>Stylish</option>
+    </select>
+
+    <canvas id="kanseiChart"></canvas>
+
+    <script>
+        const emotionData = {
+            'Comfort': [8, 6, 5, 7, 4],
+            'Eco-Friendly': [5, 9, 4, 6, 7],
+            'Modern': [6, 4, 9, 5, 8],
+            'Reliable': [7, 5, 6, 9, 4],
+            'Stylish': [4, 6, 8, 5, 9]
+        };
+
+        const labels = ['Softness', 'Sustainability', 'Innovation', 'Trust', 'Design'];
+
+        const ctx = document.getElementById('kanseiChart').getContext('2d');
+        const kanseiChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Emotion Profile',
+                    data: emotionData['Comfort'],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 10
+                    }
+                }
+            }
+        });
+
+        function updateChart() {
+            const selected = document.getElementById('kanseiSelect').value;
+            kanseiChart.data.datasets[0].data = emotionData[selected];
+            kanseiChart.update();
+        }
+    </script>
+</body>
+</html>
